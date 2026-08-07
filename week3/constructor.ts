@@ -1,42 +1,31 @@
-class Employee {
+class Employee{
     name: string;
-    designation: string;
     salary: number;
-
-    constructor(name: string);
-    constructor(name: string, designation: string, salary: number);
-
-    constructor(name: string, designation?: string, salary?: number) {
-        this.name = name;
-        this.designation = designation ?? "Trainee";
-        this.salary = salary ?? 25000;
+    department: string;
+    constructor(name:string);
+    constructor(name: string, salary: number, department:string);
+    constructor(name: string, salary?: number, department?: string){
+        this.name= name;
+        this.salary= salary ?? 20000;
+        this.department= department ?? "Trainee";
     }
 
-    display(): void {
-        console.log("Name:", this.name);
-        console.log("Designation:", this.designation);
-        console.log("Salary:", this.salary);
-        console.log("----------------------");
+    display():void{
+        console.log("-------------------------");
+        console.log("Name: "+this.name);
+        console.log("Salary: "+this.salary);
+        console.log("Department: "+this.department);
+        console.log("-------------------------");
     }
 }
 
-
-const emp1 = new Employee("Lahari");
-const emp2 = new Employee("Sai", "Software Engineer", 60000);
-
+const emp1=new Employee("Priya");
+const emp2=new Employee("Ravi", 45000, "Full Stack Development");
 
 emp1.display();
 emp2.display();
 
-
-console.log(emp1.name);
-console.log(emp2.salary);
-
-
-emp1.designation = "Junior Developer";
-emp1.salary = 35000;
-
-
-console.log("After Updating");
-
+console.log("After updating salary and department for emp1...");
+emp1.salary=100000;
+emp1.department="AIML";
 emp1.display();
