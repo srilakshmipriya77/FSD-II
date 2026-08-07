@@ -3,11 +3,9 @@ class Employee {
     designation: string;
     salary: number;
 
-    // Constructor Signatures
     constructor(name: string);
     constructor(name: string, designation: string, salary: number);
 
-    // Constructor Implementation
     constructor(name: string, designation?: string, salary?: number) {
         this.name = name;
         this.designation = designation ?? "Trainee";
