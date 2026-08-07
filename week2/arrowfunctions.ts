@@ -1,20 +1,13 @@
-
-// Arrow Function
-
 const greet1 = (): void => {
     console.log("Welcome to TypeScript");
 };
 
 greet1();
 
-// Arrow Function with Parameters
-
 const add1 = (a: number, b: number): number => {
     return a + b;
 };
 console.log("Addition:", add1(10, 20));
-
-// Arrow Function with One Parameter
 
 const square1 = (num: number): number => {
     return num * num;
@@ -22,17 +15,15 @@ const square1 = (num: number): number => {
 
 console.log("Square:", square1(5));
 
-// Arrow Function with Default Parameter
-
+//Default Parameters
 const welcome1 = (name: string = "Guest"): void => {
     console.log("Hello", name);
 };
 
-welcome1("Lahari");
+welcome1("Priya");
 welcome1();
 
-// Arrow Function with Optional Parameter
-
+//Optional Parameters
 const student1 = (name: string, age?: number): void => {
     console.log("Name:", name);
 
@@ -44,10 +35,9 @@ const student1 = (name: string, age?: number): void => {
 };
 
 student1("Sai", 20);
-student1("Lahari");
+student1("Priya");
 
-// Arrow Function with Rest Parameters
-
+//Rest Parameter
 const total1 = (...marks: number[]): number => {
     let sum = 0;
 
