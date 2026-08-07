@@ -1,55 +1,36 @@
 const greet1 = (): void => {
-    console.log("Welcome to TypeScript");
+    console.log("Welcome to TypeScript!");
 };
-
 greet1();
 
-const add1 = (a: number, b: number): number => {
-    return a + b;
-};
-console.log("Addition:", add1(10, 20));
+const add1=(a:number , b:number): number =>{
+    return a+b;
+}
+console.log("Addition of 5 and 10: "+add1(5,10));
 
-const square1 = (num: number): number => {
-    return num * num;
-};
+const greet2=(name:string = "Guest"): void=>{
+    console.log(`Hello, ${name}! Welcome to Week 2 of FSD lab.`);
+}
+greet2("Priya");
+greet2();
 
-console.log("Square:", square1(5));
-
-//Default Parameters
-const welcome1 = (name: string = "Guest"): void => {
-    console.log("Hello", name);
-};
-
-welcome1("Priya");
-welcome1();
-
-//Optional Parameters
-const student1 = (name: string, age?: number): void => {
-    console.log("Name:", name);
-
-    if (age !== undefined) {
-        console.log("Age:", age);
-    } else {
-        console.log("Age not provided");
+const studentDetails=(name: String, age?:number) : void =>{
+    console.log(`Student Name: ${name}`);
+    if(age !== undefined){
+        console.log(`Student Age: ${age}`);
     }
-};
+    else{
+        console.log("Age not provided.")
+    }
+}
+studentDetails("Priya", 21);
+studentDetails("Ravi");
 
-student1("Sai", 20);
-student1("Priya");
-
-//Rest Parameter
-const total1 = (...marks: number[]): number => {
+const averageMarks = (...marks: number[]): number => {
     let sum = 0;
-
     for (let mark of marks) {
         sum += mark;
     }
-
-    return sum;
+    return sum / marks.length;
 };
-
-console.log("Total:", total1(90, 80, 95));
-console.log("Total:", total1(50, 60));
-//shorthand arrow function
-const roomno = (room:number) : number=> room;
-console.log(roomno(313));
+console.log("Average Marks:", averageMarks(85, 90, 78, 92, 88));
